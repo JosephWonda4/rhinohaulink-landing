@@ -565,7 +565,7 @@ function calcAndShow(){
 }
 
 // Google Sheets — replace URL after setup
-const SHEETS_URL='https://script.google.com/macros/s/AKfycbzqYTG5-asz2k-WiGWaTC5TQcqpORJJROeU2CuORgzZvpYE5jkFX9k-4H6cTPh1R9ss/exec';
+const SHEETS_URL='https://script.google.com/macros/s/AKfycbwsU8z4xC1nKBq1u7KYwA3TRLYm2_s0P2HxUUBr8Z2SzwL4eQiFnMJA6PcWg80HYToC/exec';
 
 async function saveData(score,tier){
   const note=document.getElementById('save-note');
@@ -579,7 +579,7 @@ async function saveData(score,tier){
     mandarin_label:RH.label,export_experience:RH.exp,
     score:score,tier:tier,consent:RH.consent
   };
-  if(SHEETS_URL==='https://script.google.com/macros/s/AKfycbzqYTG5-asz2k-WiGWaTC5TQcqpORJJROeU2CuORgzZvpYE5jkFX9k-4H6cTPh1R9ss/exec'){
+  if(SHEETS_URL==='https://script.google.com/macros/s/AKfycbwsU8z4xC1nKBq1u7KYwA3TRLYm2_s0P2HxUUBr8Z2SzwL4eQiFnMJA6PcWg80HYToC/exec'){
     console.log('Lead (add Sheets URL to save):',payload);
     note.textContent='\u2713 Assessment complete. A Rhino Haulink specialist will email your report within 2 business days. Questions: hello@rhinohaulink.com';
     return;
