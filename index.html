@@ -724,24 +724,29 @@ footer a{color:var(--gold);text-decoration:none}
 
   <!-- Elite interest form -->
   <div id="elite-interest-form" style="display:none;margin-bottom:.8rem">
-    <div class="card" style="border-color:var(--gold-bdr)">
+    <div class="card" style="border-color:var(--bdr)">
       <div class="eyebrow">Elite tier &mdash; Express interest</div>
-      <h2 style="font-size:1rem">Confirm your interest and we will contact you within 1 business day</h2>
-      <div class="why">No payment required now. A Rhino Haulink consultant will contact you to discuss your specific product category, compliance status, and the best pathway forward.</div>
-      <label class="consent-label" style="margin:.75rem 0;display:flex">
-        <input type="checkbox" id="elite_consent" style="width:15px;height:15px;flex-shrink:0;margin-top:3px;accent-color:var(--gold);cursor:pointer">
-        <span>Yes, I want to be contacted about the Elite pathway. I understand this is an expression of interest only &mdash; no payment or commitment is made at this stage.</span>
-      </label>
-      <div style="display:flex;gap:.55rem;flex-direction:column">
-        <button class="btn-pri" onclick="submitEliteInterest()">Send my interest to Rhino Haulink &rarr;</button>
-        <div style="text-align:center;font-size:12px;color:var(--txt3);margin:.2rem 0">
-          Or pay the R500 registration deposit to secure your place now:<br>
-          <strong style="color:var(--gold-l)">Standard Bank &bull; Rhino Haulink (Pty) Ltd &bull; Acc: 10269809994 &bull; Branch: 051001 &bull; Mall of Africa &bull; Ref: ELITE-[your surname]</strong>
+      <h2 style="font-size:1rem">Two ways to get started &mdash; no commitment required yet</h2>
+      <div class="why">A Rhino Haulink consultant will contact you within 1 business day to discuss your specific product category, compliance status, and the best pathway forward.</div>
+      <div style="display:flex;gap:.6rem;flex-direction:column;margin-top:.5rem">
+
+        <a href="mailto:hello@rhinohaulink.com?subject=Elite%20Tier%20Interest&body=Hi%20Rhino%20Haulink%2C%0A%0AI%20completed%20the%20China%20Export%20Readiness%20Score%20and%20I%20am%20interested%20in%20the%20Elite%20pathway.%0A%0APlease%20contact%20me%20to%20discuss%20onboarding." class="btn-pri" style="text-align:center;text-decoration:none">
+          Email us your interest &rarr;
+        </a>
+
+        <div style="font-size:12px;color:var(--txt3);text-align:center;padding:4px 0">or secure your place with the R500 registration deposit</div>
+
+        <div style="background:var(--d3);border-radius:var(--rs);padding:.75rem 1rem;font-size:12.5px;color:var(--txt3);line-height:1.7;border:.5px solid var(--bdr2)">
+          <strong style="color:var(--gold-l);display:block;margin-bottom:4px">Standard Bank EFT</strong>
+          Rhino Haulink (Pty) Ltd &bull; Acc: 10269809994<br>
+          Branch: 051001 &bull; Mall of Africa<br>
+          <span style="color:var(--txt2)">Ref: <strong>ELITE-[firstname]-[surname]</strong></span>
         </div>
-        <button type="button" class="btn-out" onclick="openPaystackPopup()" style="cursor:pointer;width:100%">Pay R500 deposit via Paystack &rarr;</button>
-      </div>
-      <div id="elite-confirm" style="display:none;margin-top:.75rem;padding:10px 12px;background:rgba(46,125,82,.1);border:.5px solid rgba(46,125,82,.3);border-radius:var(--rs);font-size:13px;color:var(--green-l)">
-        &#10003; Interest submitted. A Rhino Haulink consultant will contact you within 1 business day.
+
+        <button type="button" class="btn-out" onclick="openPaystackPopup()" style="cursor:pointer">
+          Pay R500 deposit via Paystack &rarr;
+        </button>
+
       </div>
     </div>
   </div>
@@ -1341,17 +1346,7 @@ async function saveData(score,tier){
   }
 }
 
-/* Elite interest submit */
-function submitEliteInterest(){
-  var cb=document.getElementById('elite_consent');
-  if(!cb||!cb.checked){alert('Please tick the checkbox to confirm your interest.');return;}
-  var payload={timestamp:new Date().toISOString(),first_name:RH.fn,last_name:RH.ln,email:RH.em,company:RH.co,phone:RH.ph,province:RH.pr,products:RH.products.join(', '),elite_interest:true,consent:true};
-  fetch(SHEETS_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)}).catch(function(){});
-  document.getElementById('elite-confirm').style.display='block';
-  cb.disabled=true;
-  var btn=document.querySelector('#elite-interest-form .btn-pri');
-  if(btn){btn.disabled=true;btn.style.opacity='0.5';}
-}
+
 </script>
 
 <!-- PAYSTACK POPUP MODAL -->
@@ -1365,7 +1360,7 @@ function submitEliteInterest(){
       <strong style="color:#D4AF37;display:block;margin-bottom:3px">Standard Bank EFT alternative</strong>
       Rhino Haulink (Pty) Ltd &bull; Acc: 10269809994<br>
       Branch: 051001 &bull; Mall of Africa<br>
-      Ref: ELITE-[your surname]
+      Ref: ELITE-[firstname]-[surname]
     </div>
     <a href="https://paystack.shop/pay/go7qlvavba" target="_blank" rel="noopener"
       style="display:block;width:100%;padding:14px;background:#D4AF37;color:#182327;font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:700;text-align:center;text-decoration:none;border-radius:8px;letter-spacing:.04em;box-sizing:border-box"
