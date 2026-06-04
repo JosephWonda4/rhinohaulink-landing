@@ -501,7 +501,7 @@ footer a{color:var(--gold);text-decoration:none}
 </div>
 
 <!-- ═══════ STEP 0: CONTACT ═══════ -->
-<div id="s0" class="step active">
+<div id="s0" class="step">
   <div class="card" style="text-align:center;padding:1.6rem 1.2rem 1.2rem">
     <div class="eyebrow">Free &bull; 3 minutes &bull; Instant results</div>
     <h2>What do you grow or produce?</h2>
@@ -512,7 +512,7 @@ footer a{color:var(--gold);text-decoration:none}
 
 
 <!-- ═══════ STEP 1: PRODUCTS ═══════ -->
-<div id="s1" class="step">
+<div id="s1" class="step active">
   <div class="card">
     <div class="eyebrow">Step 2 of 9 — Your products</div>
     <h2>What do you grow or produce for export?</h2>
@@ -832,6 +832,9 @@ footer a{color:var(--gold);text-decoration:none}
   }
   tick();setInterval(tick,60000);
 })();
+
+// Start on products step
+showStep(1);
 
 /* ════════════════════════════════════════
    STATE
