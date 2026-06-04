@@ -833,8 +833,12 @@ footer a{color:var(--gold);text-decoration:none}
   tick();setInterval(tick,60000);
 })();
 
-// Start on products step
+// Start on products step and scroll to it
 showStep(1);
+(function(){
+  var el = document.getElementById('s1');
+  if(el){ setTimeout(function(){ el.scrollIntoView({behavior:'smooth',block:'start'}); }, 300); }
+})();
 
 /* ════════════════════════════════════════
    STATE
