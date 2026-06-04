@@ -697,7 +697,17 @@ footer a{color:var(--gold);text-decoration:none}
     <div class="tier-price" id="t-price"></div>
     <div class="ctas">
       <a id="cta1" href="#" class="btn-pri" target="_blank"></a>
-      <a href="#" class="btn-out" onclick="(function(){var em=encodeURIComponent(RH&&RH.em?RH.em:'');window.open('https://docs.google.com/forms/d/15P9WjQPiXzXnbNfH46JiGAOf6ihb7X2xbgmowagMPcg/viewform?entry.791191135='+em,'_blank');})()">Complete the industry research survey &rarr;</a>
+      <a href="#" class="btn-out" onclick="const RH={
+  fn:'',ln:'',em:'',co:'',ph:'',pr:'',
+  products:[],otherText:'',
+  fbo:null,puc:null,ppecb:null,ecert:null,cold:null,label:null,exp:'',
+  consent:false
+};
+
+const HIGH_RISK   =['meat','dairy','seafood','honey'];
+const COLD_NEEDED =['fresh_fruit','vegetables','meat','dairy','seafood'];
+
+(function(){var em=encodeURIComponent(RH&&RH.em?RH.em:'');window.open('https://docs.google.com/forms/d/15P9WjQPiXzXnbNfH46JiGAOf6ihb7X2xbgmowagMPcg/viewform?entry.791191135='+em,'_blank');})()">Complete the industry research survey &rarr;</a>
     </div>
   </div>
 
@@ -838,16 +848,7 @@ showStep(1);
 /* ════════════════════════════════════════
    STATE
 ════════════════════════════════════════ */
-const RH={
-  fn:'',ln:'',em:'',co:'',ph:'',pr:'',
-  products:[],otherText:'',
-  fbo:null,puc:null,ppecb:null,ecert:null,cold:null,label:null,exp:'',
-  consent:false
-};
-
 /* ── Risk & cold chain classification ── */
-const HIGH_RISK   =['meat','dairy','seafood','honey'];
-const COLD_NEEDED =['fresh_fruit','vegetables','meat','dairy','seafood'];
 
 function getHighestRisk(p){
   if(p.some(x=>HIGH_RISK.includes(x)))return'high';
