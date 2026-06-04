@@ -506,7 +506,7 @@ footer a{color:var(--gold);text-decoration:none}
   <div>
     <div class="decree-title">Decree 280 takes effect 1 June 2026</div>
     <div class="decree-body">GACC has replaced Decree 248 with Decree 280. All food exporters to China must comply with updated registration, traceability, and Simplified Chinese labelling requirements.</div>
-    <div class="countdown" id="countdown-text">Calculating deadline...</div>
+    
   </div>
 </div>
 
@@ -521,33 +521,12 @@ footer a{color:var(--gold);text-decoration:none}
 
 <!-- ═══════ STEP 0: CONTACT ═══════ -->
 <div id="s0" class="step active">
-  <div class="card">
-    <div class="eyebrow">Step 1 of 9 — Your details</div>
-    <h2>Get your free score — see your gaps instantly</h2>
-    <div class="why">Answer 9 questions and see your China Export Readiness Score right away. Enter your details to also receive your full personalised gap analysis by email — or skip to see your score now.</div>
-    <div class="row2">
-      <div class="field"><label>First name *</label><input type="text" id="f_fn" placeholder="Sipho"></div>
-      <div class="field"><label>Last name</label><input type="text" id="f_ln" placeholder="Dlamini"></div>
-    </div>
-    <div class="field"><label>Email address *</label><input type="email" id="f_em" placeholder="sipho@yourfarm.co.za"></div>
-    <div class="row2">
-      <div class="field"><label>Company / Farm name</label><input type="text" id="f_co" placeholder="Limpopo Fresh Farms"></div>
-      <div class="field"><label>Phone / WhatsApp</label><input type="tel" id="f_ph" placeholder="082 123 4567"></div>
-    </div>
-    <div class="field"><label>Province</label>
-      <select id="f_pr">
-        <option value="">Select your province</option>
-        <option>Western Cape</option><option>Limpopo</option><option>Gauteng</option>
-        <option>Eastern Cape</option><option>KwaZulu-Natal</option><option>Mpumalanga</option>
-        <option>North West</option><option>Free State</option><option>Northern Cape</option>
-      </select>
-    </div>
-    <label class="consent-label">
-      <input type="checkbox" id="consent_email">
-      <span>I agree to receive my readiness report and compliance updates from Rhino Haulink by email. Unsubscribe any time. <a href="mailto:hello@rhinohaulink.com">Privacy: hello@rhinohaulink.com</a></span>
-    </label>
+  <div class="card" style="text-align:center;padding:1.5rem 1.2rem 1rem">
+    <div class="eyebrow">Free · 3 minutes · Instant results</div>
+    <h2 style="margin-bottom:.5rem">What do you grow or produce?</h2>
+    <div class="why" style="margin-bottom:0">Select all products you export or plan to export to China — your score depends on it.</div>
   </div>
-  <div class="nav"><button class="btn-out" onclick="goNext(0)" style="font-size:13px;padding:10px 18px">Skip — show my score &rarr;</button><button class="btn-nx" onclick="goNext(0)">Save &amp; continue &rarr;</button></div>
+  <div class="nav"><span></span><button class="btn-nx" onclick="goNext(0)" style="opacity:0;pointer-events:none">Next</button></div>
 </div>
 
 <!-- ═══════ STEP 1: PRODUCTS ═══════ -->
@@ -702,16 +681,19 @@ footer a{color:var(--gold);text-decoration:none}
   </div>
 
 
-  <!-- Email capture — for users who skipped S0 email entry -->
-  <div id="email-capture-prompt" style="background:#1E2C30;border:1px solid #2A3C40;border-radius:10px;padding:1rem 1.2rem;margin-bottom:1.2rem">
-    <div style="font-family:'Space Grotesk',sans-serif;font-weight:600;color:#D4AF37;font-size:14px;margin-bottom:.4rem">📬 Get your full gap analysis by email</div>
-    <div style="font-family:'Inter',sans-serif;font-size:12.5px;color:#B8C8B8;margin-bottom:.8rem">Enter your email below and we'll send your personalised compliance gap analysis, HS code mapping, and next steps. Free. No spam.</div>
-    <div style="display:flex;gap:.6rem;flex-wrap:wrap">
-      <input type="email" id="post-score-email" placeholder="your@email.co.za" style="flex:1;min-width:200px;padding:9px 12px;background:#243337;border:1px solid #2A3C40;border-radius:7px;color:#F0EDE6;font-family:'Inter',sans-serif;font-size:13px">
-      <button onclick="submitPostScoreEmail()" style="padding:9px 18px;background:#D4AF37;color:#182327;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:13px;border:none;border-radius:7px;cursor:pointer">Send my report &rarr;</button>
     </div>
-    <div id="post-score-email-thanks" style="display:none;font-family:'Inter',sans-serif;font-size:12.5px;color:#22C55E;margin-top:.6rem">✅ Thanks — your gap analysis is on its way.</div>
+  <div class="sec">Recommended pathway</div>
+  <div class="tier-card">
+    <div class="tier-pill" id="t-pill"></div>
+    <div class="tier-name" id="t-name"></div>
+    <div class="tier-desc" id="t-desc"></div>
+    <div class="tier-price" id="t-price"></div>
+    <div class="ctas">
+      <a id="cta1" href="#" class="btn-pri" target="_blank"></a>
+      <a href="#" class="btn-out" onclick="(function(){var em=encodeURIComponent(RH&&RH.em?RH.em:'');window.open('https://docs.google.com/forms/d/15P9WjQPiXzXnbNfH46JiGAOf6ihb7X2xbgmowagMPcg/viewform?entry.791191135='+em,'_blank');})()" >Complete the industry research survey &rarr;</a>
+    </div>
   </div>
+
   <!-- HS Code Mapping -->
   <div class="sec">Your HS code mapping</div>
   <div class="hs-wrap">
@@ -740,17 +722,7 @@ footer a{color:var(--gold);text-decoration:none}
   </div>
 
   <!-- Recommended Pathway -->
-  <div class="sec">Recommended pathway</div>
-  <div class="tier-card">
-    <div class="tier-pill" id="t-pill"></div>
-    <div class="tier-name" id="t-name"></div>
-    <div class="tier-desc" id="t-desc"></div>
-    <div class="tier-price" id="t-price"></div>
-    <div class="ctas">
-      <a id="cta1" href="#" class="btn-pri" target="_blank"></a>
-      <a href="#" class="btn-out" onclick="(function(){var em=encodeURIComponent(RH&&RH.em?RH.em:'');window.open('https://docs.google.com/forms/d/15P9WjQPiXzXnbNfH46JiGAOf6ihb7X2xbgmowagMPcg/viewform?entry.791191135='+em,'_blank');})()" >Complete the industry research survey &rarr;</a>
-    </div>
-  </div>
+  
 
   <!-- Elite interest form -->
   <div id="elite-interest-form" style="display:none;margin-bottom:.8rem">
@@ -808,6 +780,57 @@ footer a{color:var(--gold);text-decoration:none}
   <div class="save-note" id="save-note">Saving your results...</div>
   <div class="beta-scarcity">
     <p>&#9888; <strong>Beta cohort seats are filling up.</strong> A Rhino Haulink specialist will contact you within 2 business days to confirm your place.</p>
+  </div>
+</div>
+
+
+<!-- ═══════ EMAIL CAPTURE STEP (pre-score) ═══════ -->
+<div id="s-email" class="step" style="display:none">
+  <div class="card">
+    <div class="eyebrow">Almost there — your score is ready</div>
+    <h2>Where should we send your results?</h2>
+    <div class="why">Enter your email and we'll send your personalised gap analysis and HS code mapping. Or skip to see your score now.</div>
+    <div class="field" style="margin-top:.8rem">
+      <label>Email address</label>
+      <input type="email" id="pre_em" placeholder="sipho@yourfarm.co.za">
+    </div>
+    <label class="consent-label" style="margin-top:.6rem">
+      <input type="checkbox" id="pre_consent" checked>
+      <span>I agree to receive my readiness report and compliance updates from Rhino Haulink by email.</span>
+    </label>
+  </div>
+  <div class="nav">
+    <button class="btn-out" onclick="skipToDetails()" style="font-size:13px;padding:10px 18px">Skip &rarr;</button>
+    <button class="btn-nx" onclick="saveEmailAndNext()">Next &rarr;</button>
+  </div>
+</div>
+
+<!-- ═══════ DETAILS STEP (pre-score) ═══════ -->
+<div id="s-details" class="step" style="display:none">
+  <div class="card">
+    <div class="eyebrow">One last step</div>
+    <h2>Tell us a bit about your operation</h2>
+    <div class="why">This helps us personalise your gap analysis. All fields optional.</div>
+    <div class="row2" style="margin-top:.8rem">
+      <div class="field"><label>First name</label><input type="text" id="pre_fn" placeholder="Sipho"></div>
+      <div class="field"><label>Last name</label><input type="text" id="pre_ln" placeholder="Dlamini"></div>
+    </div>
+    <div class="row2">
+      <div class="field"><label>Company / Farm name</label><input type="text" id="pre_co" placeholder="Limpopo Fresh Farms"></div>
+      <div class="field"><label>Phone / WhatsApp</label><input type="tel" id="pre_ph" placeholder="082 123 4567"></div>
+    </div>
+    <div class="field"><label>Province</label>
+      <select id="pre_pr">
+        <option value="">Select your province</option>
+        <option>Western Cape</option><option>Limpopo</option><option>Gauteng</option>
+        <option>Eastern Cape</option><option>KwaZulu-Natal</option><option>Mpumalanga</option>
+        <option>North West</option><option>Free State</option><option>Northern Cape</option>
+      </select>
+    </div>
+  </div>
+  <div class="nav">
+    <button class="btn-out" onclick="showMyScore()" style="font-size:13px;padding:10px 18px">Skip — show score &rarr;</button>
+    <button class="btn-nx" onclick="saveDetailsAndScore()">Show my score &rarr;</button>
   </div>
 </div>
 
@@ -1107,14 +1130,8 @@ function showStep(n){
 
 function goNext(from){
   if(from===0){
-    RH.fn=document.getElementById('f_fn').value.trim();
-    RH.ln=document.getElementById('f_ln').value.trim();
-    RH.em=document.getElementById('f_em').value.trim();
-    RH.co=document.getElementById('f_co').value.trim();
-    RH.ph=document.getElementById('f_ph').value.trim();
-    RH.pr=document.getElementById('f_pr').value;
-    RH.consent=document.getElementById('consent_email').checked;
-    if(RH.em && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(RH.em)){alert('Please enter a valid email address or leave it blank to skip.');return;}
+    // S0 is now a pure hero — no form fields, just advance to products
+    showStep(1);return;
   }
   if(from===1){
     RH.otherText=document.getElementById('f_other')?document.getElementById('f_other').value.trim():'';
@@ -1223,7 +1240,56 @@ function showInco(key,tab){
 /* ════════════════════════════════════════
    SCORING & RESULTS
 ════════════════════════════════════════ */
+
 function calcAndShow(){
+  // Show email capture step before revealing score
+  document.querySelectorAll('.step').forEach(s=>s.style.display='none');
+  var ps=document.getElementById('prog-section'); if(ps) ps.style.display='none';
+  var sel = document.getElementById('s-email');
+  if(sel){ sel.style.display=''; sel.classList.add('active'); }
+}
+
+function saveEmailAndNext(){
+  var em = document.getElementById('pre_em').value.trim();
+  if(em && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)){
+    alert('Please enter a valid email address or leave it blank to skip.');return;
+  }
+  if(em){ RH.em=em; RH.consent=document.getElementById('pre_consent').checked; }
+  // Go to details step
+  document.getElementById('s-email').style.display='none';
+  document.getElementById('s-email').classList.remove('active');
+  var sd=document.getElementById('s-details');
+  sd.style.display=''; sd.classList.add('active');
+}
+
+function skipToDetails(){
+  document.getElementById('s-email').style.display='none';
+  document.getElementById('s-email').classList.remove('active');
+  var sd=document.getElementById('s-details');
+  sd.style.display=''; sd.classList.add('active');
+}
+
+function saveDetailsAndScore(){
+  var fn=document.getElementById('pre_fn').value.trim();
+  var ln=document.getElementById('pre_ln').value.trim();
+  var co=document.getElementById('pre_co').value.trim();
+  var ph=document.getElementById('pre_ph').value.trim();
+  var pr=document.getElementById('pre_pr').value;
+  if(fn && !RH.fn) RH.fn=fn;
+  if(ln && !RH.ln) RH.ln=ln;
+  if(co && !RH.co) RH.co=co;
+  if(ph && !RH.ph) RH.ph=ph;
+  if(pr && !RH.pr) RH.pr=pr;
+  showMyScore();
+}
+
+function showMyScore(){
+  document.getElementById('s-details').style.display='none';
+  document.getElementById('s-details').classList.remove('active');
+  _calcAndShowReal();
+}
+
+function _calcAndShowReal(){
   const risk=getHighestRisk(RH.products);
   const isHigh=risk==='high';
   const coldApplicable=needsCold(RH.products);
@@ -1325,6 +1391,14 @@ function calcAndShow(){
   if(ctaHref==='#elite-interest-form'){
     c1.removeAttribute('href');
     c1.onclick=function(e){e.preventDefault();var ef=document.getElementById('elite-interest-form');if(ef){ef.style.display='block';ef.scrollIntoView({behavior:'smooth',block:'start'});}};
+  }else if(ctaHref==='https://forms.gle/HqBiYz7npQV1fPzj8'){
+    // Beta cohort — use pre-fill form URL with email
+    c1.removeAttribute('href');
+    c1.onclick=function(e){
+      e.preventDefault();
+      var em=encodeURIComponent(RH&&RH.em?RH.em:'');
+      window.open('https://docs.google.com/forms/d/15P9WjQPiXzXnbNfH46JiGAOf6ihb7X2xbgmowagMPcg/viewform?entry.791191135='+em,'_blank');
+    };
   }else{
     c1.href=ctaHref;c1.onclick=null;
   }
@@ -1353,7 +1427,7 @@ function calcAndShow(){
 ════════════════════════════════════════ */
 const SHEETS_URL='https://script.google.com/macros/s/AKfycbzqYTG5-asz2k-WiGWaTC5TQcqpORJJROeU2CuORgzZvpYE5jkFX9k-4H6cTPh1R9ss/exec';
 
-async function saveData(score,tier){
+async async function saveData(score,tier){
   const note=document.getElementById('save-note');
   const payload={
     timestamp:new Date().toISOString(),
@@ -1411,26 +1485,6 @@ document.getElementById('ps-overlay').addEventListener('click',function(e){
   if(e.target===this)closePaystackPopup();
 });
 
-function submitPostScoreEmail(){
-  var em = document.getElementById('post-score-email').value.trim();
-  if(!em || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)){
-    alert('Please enter a valid email address.');return;
-  }
-  // Store for survey pre-fill
-  if(!RH.em) RH.em = em;
-  // Update survey link dynamically
-  document.getElementById('post-score-email').disabled = true;
-  document.getElementById('post-score-email-thanks').style.display='block';
-  // Hide the prompt inputs
-  document.getElementById('post-score-email').style.display='none';
-  document.querySelector('#email-capture-prompt button').style.display='none';
-  // Send to Formspree / email service if configured
-  fetch('https://formspree.io/f/hello@rhinohaulink.com', {
-    method:'POST',
-    headers:{'Content-Type':'application/json'},
-    body: JSON.stringify({email: em, score: document.getElementById('score-num').textContent, name: RH.fn||'', products: (RH.products||[]).join(', ')})
-  }).catch(function(){});
-}
 
 </script>
 </body>
