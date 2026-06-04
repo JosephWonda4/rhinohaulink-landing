@@ -536,7 +536,7 @@ footer a{color:var(--gold);text-decoration:none}
     </div>
     <div class="multi-hint">Select all that apply — at least one required</div>
   </div>
-  <div class="nav"><button class="btn-bk" onclick="goBack(1)">&larr; Back</button><button class="btn-nx" onclick="goNext(1)">Continue &rarr;</button></div>
+  <div class="nav"><span></span><button class="btn-nx" onclick="goNext(1)">Continue &rarr;</button></div>
 </div>
 
 <!-- ═══════ STEP 2: FBO ═══════ -->
@@ -1101,7 +1101,15 @@ function goNext(from){
   }
   if(from===1){
     RH.otherText=document.getElementById('f_other')?document.getElementById('f_other').value.trim():'';
-    if(RH.products.length===0){alert('Please select at least one product category.');return;}
+    if(RH.products.length===0){
+      // Highlight the product grid so user knows to select
+      var og=document.querySelector('#s1 .og');
+      if(og){og.style.outline='2px solid #D4AF37';setTimeout(function(){og.style.outline='';},2000);}
+      var hint=document.querySelector('#s1 .multi-hint');
+      if(hint){hint.style.color='#D4AF37';hint.style.fontWeight='700';setTimeout(function(){hint.style.color='';hint.style.fontWeight='';},2000);}
+      window.scrollTo({top:0,behavior:'smooth'});
+      return;
+    }
     // Update cold step text dynamically
     const hasMeat=RH.products.some(p=>HIGH_RISK.includes(p));
     const why=document.getElementById('s6-why');
