@@ -760,7 +760,7 @@ footer a{color:var(--gold);text-decoration:none}
 
 
 <!-- ═══════ CAPTURE STEP (pre-score) ═══════ -->
-<div id="s-capture" class="step" style="display:none">
+<div id="s-capture" style="display:none">
   <div class="card">
     <div class="eyebrow">Almost there &mdash; your score is ready</div>
     <h2>Where should we send your results?</h2>
@@ -1101,6 +1101,12 @@ function goNext(from){
   }
   if(from===1){
     RH.otherText=document.getElementById('f_other')?document.getElementById('f_other').value.trim():'';
+    if(RH.products.includes('other')&&!RH.otherText){
+      document.getElementById('f_other').focus();
+      document.getElementById('f_other').style.borderColor='#D4AF37';
+      setTimeout(function(){document.getElementById('f_other').style.borderColor='';},2000);
+      return;
+    }
     if(RH.products.length===0){
       // Highlight the product grid so user knows to select
       var og=document.querySelector('#s1 .og');
@@ -1216,11 +1222,11 @@ function showInco(key,tab){
 ════════════════════════════════════════ */
 
 function calcAndShow(){
-  // Show capture step before score
+  // Hide all steps, show capture div
   document.querySelectorAll('.step').forEach(s=>s.classList.remove('active'));
   var ps=document.getElementById('prog-section'); if(ps) ps.style.display='none';
   var sc=document.getElementById('s-capture');
-  sc.style.display=''; sc.classList.add('active');
+  sc.style.display='block';
   window.scrollTo({top:0,behavior:'smooth'});
 }
 
@@ -1236,10 +1242,12 @@ function submitCapture(){
   RH.ph=document.getElementById('cap_ph').value.trim()||RH.ph;
   RH.pr=document.getElementById('cap_pr').value||RH.pr;
   RH.consent=document.getElementById('cap_consent').checked;
+  document.getElementById('s-capture').style.display='none';
   _realCalcAndShow();
 }
 
 function skipCapture(){
+  document.getElementById('s-capture').style.display='none';
   _realCalcAndShow();
 }
 
