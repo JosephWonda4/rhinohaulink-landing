@@ -670,7 +670,7 @@ footer a{color:var(--gold);text-decoration:none}
     <div class="tier-price" id="t-price"></div>
     <div class="ctas">
       <a id="cta1" href="#" class="btn-pri" target="_blank"></a>
-      <a href="#" class="btn-out" onclick="(function(){var em=encodeURIComponent(window.RH&&window.RH.em?window.RH.em:'');window.open('https://docs.google.com/forms/d/15P9WjQPiXzXnbNfH46JiGAOf6ihb7X2xbgmowagMPcg/viewform?entry.791191135='+em,'_blank');})()">Complete the industry research survey &rarr;</a>
+      <a href="#" class="btn-out" onclick="(function(){var em=encodeURIComponent(window.RH&&window.RH.em?window.RH.em:'');window.open('https://docs.google.com/forms/d/15P9WjQPiXzXnbNfH46JiGAOf6ihb7X2xbgmowagMPcg/viewform?entry.791191135='+em,'_blank');})()">Send us an enquiry &rarr;</a>
     </div>
   </div>
 
@@ -685,14 +685,6 @@ footer a{color:var(--gold);text-decoration:none}
         <a href="mailto:hello@rhinohaulink.com?subject=Elite%20Tier%20Interest&body=Hi%20Rhino%20Haulink%2C%0A%0AI%20completed%20the%20China%20Export%20Readiness%20Score%20and%20I%20am%20interested%20in%20the%20Elite%20pathway.%0A%0APlease%20contact%20me%20to%20discuss%20onboarding." class="btn-pri" style="text-align:center;text-decoration:none">
           Email us your interest &rarr;
         </a>
-
-
-        <div style="background:var(--d3);border-radius:var(--rs);padding:.75rem 1rem;font-size:12.5px;color:var(--txt3);line-height:1.7;border:.5px solid var(--bdr2)">
-          <strong style="color:var(--gold-l);display:block;margin-bottom:4px">Standard Bank EFT</strong>
-          Rhino Haulink (Pty) Ltd &bull; Acc: 10269809994<br>
-          Branch: 051001 &bull; Mall of Africa<br>
-          <span style="color:var(--txt2)">Ref: <strong>ELITE-[firstname]-[surname]</strong></span>
-        </div>
 
 
       </div>
@@ -1080,7 +1072,7 @@ function showStep(n){
   const hero=document.getElementById('hero-section');
   const decree=document.getElementById('decree-banner');
   const prog=document.getElementById('prog-section');
-  if(n>0&&n<9){
+  if(n>1&&n<9){
     if(hero){hero.style.maxHeight='0';hero.style.overflow='hidden';hero.style.paddingTop='0';hero.style.paddingBottom='0';hero.style.marginBottom='0';hero.style.opacity='0';}
     if(decree)decree.style.display='none';
     if(prog)prog.style.display='block';
@@ -1089,6 +1081,7 @@ function showStep(n){
     if(decree)decree.style.display='none';
     if(prog)prog.style.display='none';
   }else{
+    // n===0 or n===1: show hero + decree, hide progress
     if(hero){hero.style.maxHeight='';hero.style.overflow='';hero.style.paddingTop='';hero.style.paddingBottom='';hero.style.marginBottom='';hero.style.opacity='';}
     if(decree)decree.style.display='';
     if(prog)prog.style.display='none';
@@ -1312,8 +1305,8 @@ function _realCalcAndShow(){
     tname='Elite concierge pathway';
     tdesc='Specialist consulting and dossier preparation support for the DALRRD CA recommendation process, GACC registration, Decree 280 Mandarin label design, CIFER submission guidance, eCommerce market access, and product labelling. We guide you through each requirement so you understand what is needed and where to obtain it. Standard-risk products in your portfolio are included.';
     tprice='R13,000 / year';
-    ctaTxt='I am interested in the Elite pathway →';
-    ctaHref='#elite-interest-form';
+    ctaTxt='Sign up on Rhino Haulink →';
+    ctaHref='https://rhinohaulink.com/register';
   }else if(score>=70){
     title='Export ready — final steps remain';
     sub='You have the compliance foundations in place. CIFER registration and dossier preparation are your next concrete steps. Rhino Haulink automates this process with AI-assisted workflows under Decree 280.';
@@ -1321,8 +1314,8 @@ function _realCalcAndShow(){
     tname='Standard self-registration pathway';
     tdesc='Self-service GACC compliance with AI-assisted dossier generation, Decree 280 Mandarin label templates, and CIFER submission guidance. Designed for producers with existing PPECB certification and FBO/PUC codes who are ready to proceed.';
     tprice='R2,500 / year';
-    ctaTxt='Claim your beta cohort place \u2192';
-    ctaHref='#beta-form';
+    ctaTxt='Sign up on Rhino Haulink →';
+    ctaHref='https://rhinohaulink.com/register';
   }else if(score>=40){
     title='Good progress — close these gaps before shipping';
     sub='You have some compliance foundations in place but gaps that would result in port rejection today. Every gap is solvable. The beta cohort guides you through each milestone at no cost.';
@@ -1330,8 +1323,8 @@ function _realCalcAndShow(){
     tname='Guided preparation pathway';
     tdesc='Join our founding beta cohort at no cost — limited places available. Work through each compliance milestone with Rhino Haulink guidance before your first CIFER submission. Beta members receive priority dossier preparation and a case study feature.';
     tprice='Free during beta phase';
-    ctaTxt='Claim your beta cohort place \u2192';
-    ctaHref='#beta-form';
+    ctaTxt='Sign up on Rhino Haulink →';
+    ctaHref='https://rhinohaulink.com/register';
   }else{
     title='Early stage — build your compliance foundation now';
     sub='You are at the beginning of your China export journey. This is the right time to build compliance infrastructure correctly — before investing in production volumes for a market you are not yet cleared to access.';
@@ -1339,8 +1332,8 @@ function _realCalcAndShow(){
     tname='Foundation-building pathway';
     tdesc='Our founding beta cohort guides new exporters step by step: FBO registration, PPECB certification, eCert setup, and GACC dossier preparation. Free for a limited first cohort only. The 1 June Decree 280 deadline makes acting now critical.';
     tprice='Free during beta phase';
-    ctaTxt='Claim your beta cohort place \u2192';
-    ctaHref='#beta-form';
+    ctaTxt='Sign up on Rhino Haulink →';
+    ctaHref='https://rhinohaulink.com/register';
   }
 
   // Render
@@ -1355,15 +1348,8 @@ function _realCalcAndShow(){
   if(ctaHref==='#elite-interest-form'){
     c1.removeAttribute('href');
     c1.onclick=function(e){e.preventDefault();var ef=document.getElementById('elite-interest-form');if(ef){ef.style.display='block';ef.scrollIntoView({behavior:'smooth',block:'start'});}};
-  }else if(ctaHref==='#beta-form'){
-    c1.removeAttribute('href');
-    c1.onclick=function(e){
-      e.preventDefault();
-      var em=encodeURIComponent(RH&&RH.em?RH.em:'');
-      window.open('https://docs.google.com/forms/d/15P9WjQPiXzXnbNfH46JiGAOf6ihb7X2xbgmowagMPcg/viewform?entry.791191135='+em,'_blank');
-    };
   }else{
-    c1.href=ctaHref;c1.onclick=null;
+    c1.href=ctaHref;c1.target='_blank';c1.onclick=null;
   }
 
   document.getElementById('score-num').textContent=score;
