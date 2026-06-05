@@ -513,7 +513,7 @@ footer a{color:var(--gold);text-decoration:none}
 <!-- ═══════ STEP 1: PRODUCTS ═══════ -->
 <div id="s1" class="step active">
   <div class="card">
-    <div class="eyebrow">Step 1 of 9 — Your products</div>
+    <div class="eyebrow">Step 1 of 8 — Your products</div>
     <h2>What do you grow or produce for export?</h2>
     <div class="why">Select <strong>all that apply</strong>. Your highest-risk category determines your GACC registration pathway and filters questions relevant to your products only.</div>
     <div class="og">
@@ -542,7 +542,7 @@ footer a{color:var(--gold);text-decoration:none}
 <!-- ═══════ STEP 2: FBO ═══════ -->
 <div id="s2" class="step">
   <div class="card">
-    <div class="eyebrow">Step 3 — DALRRD registration</div>
+    <div class="eyebrow">Step 2 of 8 — DALRRD registration</div>
     <h2>Are you registered as a Food Business Operator (FBO)?</h2>
     <div class="why">An FBO code is your first credential in the SA export system. PPECB cannot inspect or certify your products without it, and GACC/CIFER registration links directly to your FBO code. Register at <strong>fbo.daff.gov.za</strong> — allow 5–15 business days.</div>
     <div class="yng">
@@ -556,7 +556,7 @@ footer a{color:var(--gold);text-decoration:none}
 <!-- ═══════ STEP 3: PUC ═══════ -->
 <div id="s3" class="step">
   <div class="card">
-    <div class="eyebrow">Step 4 — Production unit codes</div>
+    <div class="eyebrow">Step 3 of 8 — Production unit codes</div>
     <h2>Do you have a Production Unit Code (PUC) or Pack House Code (PHC)?</h2>
     <div class="why">Your PUC identifies your farm; your PHC identifies your packhouse. Both must appear on all export certificates and your GACC dossier. Mismatched codes across documents trigger CIFER rejection.</div>
     <div class="yng">
@@ -570,7 +570,7 @@ footer a{color:var(--gold);text-decoration:none}
 <!-- ═══════ STEP 4: PPECB ═══════ -->
 <div id="s4" class="step">
   <div class="card">
-    <div class="eyebrow">Step 5 — PPECB certification</div>
+    <div class="eyebrow">Step 4 of 8 — PPECB certification</div>
     <h2>Is your farm or packhouse PPECB-certified?</h2>
     <div class="why">PPECB issues three export passports: an export certificate, a food safety certificate (SA-GAP), and a pre-cooling certificate. All three are required for every agricultural shipment to China. Without them, goods cannot legally leave South Africa.</div>
     <div class="yng">
@@ -584,7 +584,7 @@ footer a{color:var(--gold);text-decoration:none}
 <!-- ═══════ STEP 5: ECERT ═══════ -->
 <div id="s5" class="step">
   <div class="card">
-    <div class="eyebrow">Step 6 — Digital certification</div>
+    <div class="eyebrow">Step 5 of 8 — Digital certification</div>
     <h2>Are you registered on DALRRD's eCert platform?</h2>
     <div class="why">eCert is DALRRD's digital phytosanitary certificate system. China requires phytosanitary certificates for all agricultural imports. Manual paper applications are being discontinued — eCert is now effectively mandatory. Register at <strong>ecert.dalrrd.gov.za</strong>.</div>
     <div class="yng">
@@ -598,7 +598,7 @@ footer a{color:var(--gold);text-decoration:none}
 <!-- ═══════ STEP 6: COLD CHAIN (conditional) ═══════ -->
 <div id="s6" class="step">
   <div class="card">
-    <div class="eyebrow">Step 7 — Cold chain infrastructure</div>
+    <div class="eyebrow">Step 6 of 8 — Cold chain infrastructure</div>
     <h2>Do you have PPECB-verified cold chain infrastructure?</h2>
     <div class="why" id="s6-why">Cold chain verification is required for your product category. Chinese ports require 24-hour temperature monitoring logs for the full 30–40 day sea voyage. Failure to maintain the cold chain results in port detention or destruction of the consignment.</div>
     <div class="yng">
@@ -643,7 +643,7 @@ footer a{color:var(--gold);text-decoration:none}
 <div id="s9" class="step">
 
   <!-- Score ring -->
-  <div class="res-hero">
+  <div class="res-hero" id="res-hero">
     <div class="ring-wrap">
       <svg width="140" height="140" viewBox="0 0 140 140">
         <circle cx="70" cy="70" r="58" fill="none" stroke="#243337" stroke-width="9"/>
@@ -659,33 +659,6 @@ footer a{color:var(--gold);text-decoration:none}
     </div>
     <div class="res-title" id="res-title"></div>
     <div class="res-sub" id="res-sub"></div>
-  </div>
-
-  <!-- HS Code Mapping -->
-  <div class="sec">Your HS code mapping</div>
-  <div class="hs-wrap">
-    <div class="hs-title">Harmonised System codes for your selected products — SA-China corridor</div>
-    <div id="hs-rows"></div>
-    <div style="font-size:11px;color:var(--txt3);margin-top:.6rem;line-height:1.55">6-digit HS codes are used globally. China applies additional 2-digit suffixes (8-digit CIQ codes) for import classification. Your freight forwarder and GACC registration will reference these codes for every shipment declaration.</div>
-  </div>
-
-  <!-- Compliance Gaps -->
-  <div class="sec">Your compliance gap analysis</div>
-  <div id="gaps" style="margin-bottom:.2rem"></div>
-
-  <!-- INCOTERMS Decoder -->
-  <div class="sec">INCOTERMS decoder — for information</div>
-  <div class="inco-wrap">
-    <div class="inco-note-top">This decoder is provided as a free educational resource. Understanding delivery terms helps you communicate clearly with Chinese buyers and freight forwarders. INCOTERMS selection does not affect your readiness score — it is part of your commercial negotiation.</div>
-    <div class="inco-tabs">
-      <span class="inco-tab active" onclick="showInco('fob',this)">FOB</span>
-      <span class="inco-tab" onclick="showInco('cif',this)">CIF</span>
-      <span class="inco-tab" onclick="showInco('cfr',this)">CFR</span>
-      <span class="inco-tab" onclick="showInco('cip',this)">CIP</span>
-      <span class="inco-tab" onclick="showInco('dap',this)">DAP</span>
-      <span class="inco-tab" onclick="showInco('exw',this)">EXW</span>
-    </div>
-    <div id="inco-panels"></div>
   </div>
 
   <!-- Recommended Pathway -->
@@ -734,6 +707,33 @@ const COLD_NEEDED =['fresh_fruit','vegetables','meat','dairy','seafood'];
 
       </div>
     </div>
+  </div>
+
+  <!-- Compliance Gaps -->
+  <div class="sec">Your compliance gap analysis</div>
+  <div id="gaps" style="margin-bottom:.2rem"></div>
+
+  <!-- HS Code Mapping -->
+  <div class="sec">Your HS code mapping</div>
+  <div class="hs-wrap">
+    <div class="hs-title">Harmonised System codes for your selected products — SA-China corridor</div>
+    <div id="hs-rows"></div>
+    <div style="font-size:11px;color:var(--txt3);margin-top:.6rem;line-height:1.55">6-digit HS codes are used globally. China applies additional 2-digit suffixes (8-digit CIQ codes) for import classification. Your freight forwarder and GACC registration will reference these codes for every shipment declaration.</div>
+  </div>
+
+  <!-- INCOTERMS Decoder -->
+  <div class="sec">INCOTERMS decoder — for information</div>
+  <div class="inco-wrap">
+    <div class="inco-note-top">This decoder is provided as a free educational resource. Understanding delivery terms helps you communicate clearly with Chinese buyers and freight forwarders. INCOTERMS selection does not affect your readiness score — it is part of your commercial negotiation.</div>
+    <div class="inco-tabs">
+      <span class="inco-tab active" onclick="showInco('fob',this)">FOB</span>
+      <span class="inco-tab" onclick="showInco('cif',this)">CIF</span>
+      <span class="inco-tab" onclick="showInco('cfr',this)">CFR</span>
+      <span class="inco-tab" onclick="showInco('cip',this)">CIP</span>
+      <span class="inco-tab" onclick="showInco('dap',this)">DAP</span>
+      <span class="inco-tab" onclick="showInco('exw',this)">EXW</span>
+    </div>
+    <div id="inco-panels"></div>
   </div>
 
   <!-- Next Steps -->
@@ -1053,16 +1053,17 @@ function yn(el,key,val){
 
 /* ── Dynamic step count ── */
 function isColdSkipped(){return RH.products.length>0&&!needsCold(RH.products);}
-function totalSteps(){return isColdSkipped()?8:9;}
+function totalSteps(){return isColdSkipped()?7:8;}
 
 function displayStep(raw){
-  // raw = s-index 0–8; convert to display number
+  // raw = s-index 0–8; S0 is hero (no progress), S1 is step 1
   const skip=isColdSkipped();
-  if(raw<=5)return raw+1;
-  if(raw===6)return skip?null:7; // cold — null if skipped
-  if(raw===7)return skip?7:8;
-  if(raw===8)return skip?8:9;
-  return raw+1;
+  if(raw===0)return null;      // hero — no progress bar
+  if(raw<=5)return raw;        // S1=1, S2=2, S3=3, S4=4, S5=5
+  if(raw===6)return skip?null:6; // cold — skip if not applicable
+  if(raw===7)return skip?6:7;
+  if(raw===8)return skip?7:8;
+  return raw;
 }
 
 function showStep(n){
@@ -1127,10 +1128,10 @@ function goNext(from){
     }
     // Update step numbering for label and exp steps
     const total=totalSteps();
-    const labelStep=isColdSkipped()?7:8;
-    const expStep=isColdSkipped()?8:9;
-    document.getElementById('s7-eyebrow').textContent='Step '+labelStep+' — Decree 280 labelling';
-    document.getElementById('s8-eyebrow').textContent='Step '+expStep+' — Export experience';
+    const labelStep=isColdSkipped()?6:7;
+    const expStep=isColdSkipped()?7:8;
+    document.getElementById('s7-eyebrow').textContent='Step '+labelStep+' of '+totalSteps()+' — Decree 280 labelling';
+    document.getElementById('s8-eyebrow').textContent='Step '+expStep+' of '+totalSteps()+' — Export experience';
   }
   const ynMap={2:'fbo',3:'puc',4:'ppecb',5:'ecert',6:'cold',7:'label'};
   if(ynMap[from]!==undefined&&RH[ynMap[from]]===null){alert('Please make a selection to continue.');return;}
