@@ -670,17 +670,7 @@ footer a{color:var(--gold);text-decoration:none}
     <div class="tier-price" id="t-price"></div>
     <div class="ctas">
       <a id="cta1" href="#" class="btn-pri" target="_blank"></a>
-      <a href="#" class="btn-out" onclick="const RH={
-  fn:'',ln:'',em:'',co:'',ph:'',pr:'',
-  products:[],otherText:'',
-  fbo:null,puc:null,ppecb:null,ecert:null,cold:null,label:null,exp:'',
-  consent:false
-};
-
-const HIGH_RISK   =['meat','dairy','seafood','honey'];
-const COLD_NEEDED =['fresh_fruit','vegetables','meat','dairy','seafood'];
-
-(function(){var em=encodeURIComponent(RH&&RH.em?RH.em:'');window.open('https://docs.google.com/forms/d/15P9WjQPiXzXnbNfH46JiGAOf6ihb7X2xbgmowagMPcg/viewform?entry.791191135='+em,'_blank');})()">Complete the industry research survey &rarr;</a>
+      <a href="#" class="btn-out" onclick="(function(){var em=encodeURIComponent(window.RH&&window.RH.em?window.RH.em:'');window.open('https://docs.google.com/forms/d/15P9WjQPiXzXnbNfH46JiGAOf6ihb7X2xbgmowagMPcg/viewform?entry.791191135='+em,'_blank');})()">Complete the industry research survey &rarr;</a>
     </div>
   </div>
 
@@ -1032,6 +1022,16 @@ const INCO={
     saChina:'Used when a Chinese buyer or trading company sends their own collecting agent to the SA farm or packhouse. Rarely used in formal SA-China agricultural programmes. NOTE: even under EXW, the SA facility must hold valid GACC registration — China will reject goods from unregistered origins regardless of INCOTERMS.',
     alert:'EXW places maximum risk on the buyer. However, SA producers must still hold GACC registration under all INCOTERMS terms. There is no INCOTERMS clause that removes the GACC registration obligation for SA origin food products.'}
 };
+
+const RH={
+  fn:'',ln:'',em:'',co:'',ph:'',pr:'',
+  products:[],otherText:'',
+  fbo:null,puc:null,ppecb:null,ecert:null,cold:null,label:null,exp:'',
+  consent:false
+};
+
+const HIGH_RISK   =['meat','dairy','seafood','honey'];
+const COLD_NEEDED =['fresh_fruit','vegetables','meat','dairy','seafood'];
 
 /* ════════════════════════════════════════
    UI HELPERS
