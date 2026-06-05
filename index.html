@@ -802,6 +802,16 @@ footer a{color:var(--gold);text-decoration:none}
 </footer>
 
 <script>
+var RH={
+  fn:'',ln:'',em:'',co:'',ph:'',pr:'',
+  products:[],otherText:'',
+  fbo:null,puc:null,ppecb:null,ecert:null,cold:null,label:null,exp:'',
+  consent:false
+};
+
+var HIGH_RISK   =['meat','dairy','seafood','honey'];
+var COLD_NEEDED =['fresh_fruit','vegetables','meat','dairy','seafood'];
+
 /* ════════════════════════════════════════
    COUNTDOWN
 ════════════════════════════════════════ */
@@ -1022,16 +1032,6 @@ const INCO={
     saChina:'Used when a Chinese buyer or trading company sends their own collecting agent to the SA farm or packhouse. Rarely used in formal SA-China agricultural programmes. NOTE: even under EXW, the SA facility must hold valid GACC registration — China will reject goods from unregistered origins regardless of INCOTERMS.',
     alert:'EXW places maximum risk on the buyer. However, SA producers must still hold GACC registration under all INCOTERMS terms. There is no INCOTERMS clause that removes the GACC registration obligation for SA origin food products.'}
 };
-
-const RH={
-  fn:'',ln:'',em:'',co:'',ph:'',pr:'',
-  products:[],otherText:'',
-  fbo:null,puc:null,ppecb:null,ecert:null,cold:null,label:null,exp:'',
-  consent:false
-};
-
-const HIGH_RISK   =['meat','dairy','seafood','honey'];
-const COLD_NEEDED =['fresh_fruit','vegetables','meat','dairy','seafood'];
 
 /* ════════════════════════════════════════
    UI HELPERS
